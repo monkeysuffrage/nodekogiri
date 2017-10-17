@@ -46,6 +46,7 @@ class HTML{
   }
   html(){ return this.node.toString() }
   toString(){ return this.node.toString() }
+  to_s(){ return this.node.toString() }
 }
 
 class Node extends HTML{
