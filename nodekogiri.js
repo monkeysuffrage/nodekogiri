@@ -15,6 +15,14 @@ class HTML{
     let xpath = this.xpath_for(css)
     return this.node.find(xpath).map(node => new Node(node))
   }
+  at_css(css){ return this.at(css) }
+  css(css){ return this.search(css) }
+  at_xpath(xpath){
+    return this.xpath(xpath)[0]
+  }
+  xpath(xpath){
+    return this.node.find(xpath).map(node => new Node(node))
+  }  
   text(){    
     return this.node.text()
   }
@@ -28,6 +36,7 @@ class HTML{
   previous(){ return new Node(this.node.previousSibling()) }
   xpath_for(css){
     let match
+    // begin workarounds for missing stuff
     if(css.match(/^[+~]/)) return cssToXPath('*' + css).replace(/^.\/\/\*/, '.')
     if(match = css.match(/:contains\((.*?)\)/)){
       css = css.replace(/:contains\(.*?\)/, '[z]')
