@@ -1,6 +1,6 @@
 {
   "name": "nodekogiri",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A libxmljs wrapper that acts like Nokogiri",
   "main": "nodekogiri.js",
   "scripts": {
