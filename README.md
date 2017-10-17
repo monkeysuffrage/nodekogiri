@@ -33,5 +33,6 @@ console.log(data)
 ```
 It's only for extraction at this point (no DOM manipulation) and it can do some things that cheerio can't do (like the above example). It also performs a bit better than cheerio.
 ```
-data = doc.search('.foo').map(div => {
+console.log(doc.at('.foo').class) // => foo
+console.log('' + doc.at('.foo')) // => <div class="foo">My List</div>
 ```
